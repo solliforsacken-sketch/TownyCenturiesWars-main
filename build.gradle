@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.towny'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        url = 'https://maven.palmergames.com/'
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
+    compileOnly 'com.palmergames.bukkit:Towny:0.100.3.5'
+    compileOnly 'com.github.APickledWalrus:SkBee:2.8.0'
+    implementation 'org.yaml:snakeyaml:2.0'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes(
+            'Implementation-Title': 'TownyCenturiesWars',
+            'Implementation-Version': version,
+            'Created-By': 'Gradle',
+            'Main-Class': 'com.towny.main.Main'
+        )
+    }
+}
