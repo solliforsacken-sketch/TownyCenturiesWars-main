@@ -1,0 +1,69 @@
+name: TownyCenturiesWars
+version: 1.0.0
+description: Система эпох и войн для Towny с интеграцией
+author: TownyCenturiesWars
+main: com.towny.centuries.TownyCenturiesWarsPlugin
+depend: [Towny]
+softdepend: [SkBee, Vault]
+
+# Интеграция с конфигом Towny
+# Скопируйте части config.yml Towny в этот файл для расширенной интеграции
+
+commands:
+  century:
+    description: Открывает меню выбора эпохи
+    usage: /century [info]
+    aliases: [c, epochs, era]
+    permission: townycenturies.use
+  
+  wars:
+    description: Система войн между нациями
+    usage: /wars [declare|list|status]
+    aliases: [war, battle, combat]
+    permission: townycenturies.wars.use
+  
+  armory:
+    description: Оружейная - доступна с эпохи Возрождения
+    usage: /armory
+    aliases: [weapons, arsenal]
+    permission: townycenturies.armory.use
+  
+  veh:
+    description: Покупка транспортных средств
+    usage: /veh [list|buy]
+    aliases: [vehicle, transport, vehicles]
+    permission: townycenturies.veh.use
+
+permissions:
+  townycenturies.*:
+    description: Все разрешения TownyCenturiesWars
+    default: false
+    children:
+      townycenturies.use: true
+      townycenturies.wars.use: true
+      townycenturies.armory.use: true
+      townycenturies.veh.use: true
+  
+  townycenturies.use:
+    description: Право использовать команду /century
+    default: true
+  
+  townycenturies.wars.use:
+    description: Право использовать систему войн
+    default: true
+  
+  townycenturies.wars.declare:
+    description: Право объявлять войну (только для королей)
+    default: false
+  
+  townycenturies.armory.use:
+    description: Право использовать оружейную
+    default: true
+  
+  townycenturies.veh.buy:
+    description: Право покупать транспортные средства
+    default: true
+  
+  townycenturies.admin:
+    description: Администраторские права плагина
+    default: op

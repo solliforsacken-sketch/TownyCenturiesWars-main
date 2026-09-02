@@ -1,0 +1,333 @@
+# TownyCenturiesWars - Towny Configuration Integration
+# Это расширенный конфиг для интеграции TownyCenturiesWars с Towny
+
+version:
+  version: 0.103.2.0
+  last_run_version: 0.103.2.0
+
+language:
+  language: en-US.yml
+  enabled_languages: '*'
+
+############################################################
+# +------------------------------------------------------+ #
+# |         TownyCenturiesWars Era Settings              | #
+# +------------------------------------------------------+ #
+############################################################
+
+centuries:
+  # Система эпох развития нации
+  enabled: true
+  
+  # Режимы эпох
+  modes:
+    # Автоматический переход на следующую эпоху при выполнении условий
+    auto_advance: false
+    
+    # Требуемое количество жителей для перехода на следующую эпоху
+    residents_for_advance: 10
+    
+    # Требуемое количество участков для перехода на следующую эпоху
+    plots_for_advance: 20
+  
+  # Ресурсы, необходимые для перехода между эпохами
+  requirements:
+    # Проверять требуемые ресурсы
+    check_resources: true
+    
+    # Удалять ресурсы при переходе
+    consume_resources: true
+    
+    # Хранилище ресурсов (сундуки нации/города)
+    storage_type: "nation_bank"
+
+wars:
+  # Система войн между нациями
+  enabled: true
+  
+  # Сражения
+  battles:
+    # Могут ли города воевать
+    allow_town_wars: false
+    
+    # Только нации могут объявлять войну
+    allow_nation_wars: true
+    
+    # Длительность войны по умолчанию (минуты)
+    default_duration: 60
+    
+    # Минимальная длительность войны
+    min_duration: 30
+    
+    # Максимальная длительность войны
+    max_duration: 180
+  
+  # Правила сражений
+  rules:
+    # PvP включен во время войны
+    force_pvp: true
+    
+    # Отслеживание убийств
+    track_kills: true
+    
+    # Требуется минимальная эпоха для объявления войны
+    min_century_to_declare: "RENAISSANCE"
+  
+  # Победа в войне
+  victory:
+    # Количество убийств для победы
+    required_kills: 50
+    
+    # Нация может захватить города противника
+    allow_conquest: true
+
+armory:
+  # Оружейная с оружием и амуницией
+  enabled: true
+  
+  # Минимальная эпоха для доступа
+  min_century_access: "RENAISSANCE"
+  
+  # Цены на оружие
+  prices:
+    crossbow: 5000
+    diamond_helmet: 1000
+    diamond_chestplate: 2500
+    diamond_leggings: 2000
+    diamond_boots: 1000
+    tnt: 500
+    snowball: 50
+    slime_ball: 75
+
+vehicles:
+  # Система транспорта
+  enabled: true
+  
+  # Минимальная эпоха для покупки
+  min_century_access: "FLOURISH"
+  
+  # Цены на транспорт
+  prices:
+    tractor: 5000
+    harvester: 8000
+    locomotive: 10000
+    freight_wagon: 3000
+    passenger_wagon: 2500
+    automobile: 15000
+    motorcycle: 8000
+
+############################################################
+# +------------------------------------------------------+ #
+# |        Towny Town and Nation Era Levels             | #
+# +------------------------------------------------------+ #
+############################################################
+
+levels:
+  town_level:
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 0
+    numResidents: 0
+    debtCapModifier: 1.0
+    namePostfix: ' Ruins'
+    bankCapModifier: 1.0
+    mayorPrefix: 'Spirit '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 1
+    resourceProductionModifier: 1.0
+    century: "PRIMITIVE"
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 0
+    numResidents: 1
+    debtCapModifier: 1.0
+    namePostfix: ' (Settlement)'
+    bankCapModifier: 1.0
+    mayorPrefix: 'Hermit '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 16
+    resourceProductionModifier: 1.0
+    century: "STONE"
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 1
+    numResidents: 2
+    debtCapModifier: 1.0
+    namePostfix: ' (Hamlet)'
+    bankCapModifier: 1.0
+    mayorPrefix: 'Chief '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 32
+    resourceProductionModifier: 1.0
+    century: "BRONZE"
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 1
+    numResidents: 6
+    debtCapModifier: 1.0
+    namePostfix: ' (Village)'
+    bankCapModifier: 1.0
+    mayorPrefix: 'Baron Von '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 96
+    resourceProductionModifier: 1.0
+    century: "IRON"
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 2
+    numResidents: 10
+    debtCapModifier: 1.0
+    namePostfix: ' (Town)'
+    bankCapModifier: 1.0
+    mayorPrefix: 'Viscount '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 160
+    resourceProductionModifier: 1.0
+    century: "FLOURISH"
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 3
+    numResidents: 20
+    debtCapModifier: 1.0
+    namePostfix: ' (City)'
+    bankCapModifier: 1.0
+    mayorPrefix: 'Earl '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 320
+    resourceProductionModifier: 1.0
+    century: "EARLY_MEDIEVAL"
+  - townBlockTypeLimits: {}
+    upkeepModifier: 1.0
+    townOutpostLimit: 3
+    numResidents: 28
+    debtCapModifier: 1.0
+    namePostfix: ' (Metropolis)'
+    bankCapModifier: 1.0
+    mayorPrefix: 'Lord '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    peacefulCostMultiplier: 1.0
+    townBlockLimit: 448
+    resourceProductionModifier: 1.0
+    century: "RENAISSANCE"
+
+  nation_level:
+  - kingPostfix: ''
+    nationCapitalBonusOutpostLimit: 0
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: 'Leader '
+    capitalPrefix: ''
+    numResidents: 0
+    nationBonusOutpostLimit: 0
+    namePostfix: ' (Nation)'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 10
+    namePrefix: 'Land of '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 1
+    nationTownUpkeepModifier: 1.0
+    century: "PRIMITIVE"
+  - kingPostfix: ''
+    nationCapitalBonusOutpostLimit: 0
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: 'Count '
+    capitalPrefix: ''
+    numResidents: 10
+    nationBonusOutpostLimit: 1
+    namePostfix: ' (Nation)'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 20
+    namePrefix: 'Federation of '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 1
+    nationTownUpkeepModifier: 1.0
+    century: "STONE"
+  - kingPostfix: ''
+    nationCapitalBonusOutpostLimit: 0
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: 'Duke '
+    capitalPrefix: ''
+    numResidents: 20
+    nationBonusOutpostLimit: 2
+    namePostfix: ' (Nation)'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 40
+    namePrefix: 'Dominion of '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 1
+    nationTownUpkeepModifier: 1.0
+    century: "BRONZE"
+  - kingPostfix: ''
+    nationCapitalBonusOutpostLimit: 0
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: 'King '
+    capitalPrefix: ''
+    numResidents: 30
+    nationBonusOutpostLimit: 3
+    namePostfix: ' (Nation)'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 60
+    namePrefix: 'Kingdom of '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 2
+    nationTownUpkeepModifier: 1.0
+    century: "IRON"
+  - kingPostfix: ''
+    nationCapitalBonusOutpostLimit: 0
+    capitalPostfix: ''
+    upkeepModifier: 1.0
+    kingPrefix: 'Emperor '
+    capitalPrefix: ''
+    numResidents: 50
+    nationBonusOutpostLimit: 5
+    namePostfix: ' Empire'
+    bankCapModifier: 1.0
+    townBlockLimitBonus: 100
+    namePrefix: 'The '
+    peacefulCostMultiplier: 1.0
+    nationZonesSize: 2
+    nationTownUpkeepModifier: 1.0
+    century: "RENAISSANCE"
+
+economy:
+  using_economy: true
+  
+  # Стоимость интеграции с эпохами
+  century_costs:
+    stone_age: 500.0
+    bronze_age: 1500.0
+    iron_age: 3000.0
+    flourish: 7500.0
+    early_medieval: 15000.0
+    medieval: 30000.0
+    late_medieval: 50000.0
+    renaissance: 100000.0
+    atomic: 250000.0
+  
+  # Бонусы банка по эпохам
+  bank_bonuses:
+    renaissance: 1.5  # 50% бонус
+    atomic: 2.0       # 100% бонус
